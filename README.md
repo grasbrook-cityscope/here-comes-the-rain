@@ -15,4 +15,5 @@ Requires
 ## Usage
 
 `$ python3 parse_kostra.py [-h] datadir index` to create a CSV table from KOSTRA shapefiles
+
 `$ python3 make_timeseries.py [-h] [--interval INTERVAL] [--type1] datapath returnperiod duration` to create a timeseires file from the parsed CSV file
