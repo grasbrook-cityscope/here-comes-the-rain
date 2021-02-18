@@ -31,15 +31,15 @@ def equalise_interval(duration_volumes, interval):
 
 def save_csv(filepath, series, returnperiod):
     with open(filepath,"w") as fw:
-        fw.write("[TIMESERIES]\n")
+        fw.write(";;[TIMESERIES]\n")
         fw.write(";;Name YY MM DD HH mm Value\n")
         fw.write(";;---- -- -- -- -- -- -----\n")
-        period = "%d-yr" % int(returnperiod[:-1])
+        name = "%d-yr" % int(returnperiod[:-1])
 
         for step,v in enumerate(series):
             step *= 5
-            time = "2020 01 %02d %d %d" % (step // 1440 + 1, (step // 60) % 1440, step % 60)
-            fw.write(period + " " + time + " " + str(v) + "\n")
+            time = "2020 01 %02d %02d %02d" % (step // 1440 + 1, (step % 1440) // 60, step % 60)
+            fw.write(name + " " + time + " " + str(v) + "\n")
 
 
 if __name__ == "__main__":
