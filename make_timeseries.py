@@ -38,7 +38,7 @@ def save_csv(filepath, series, returnperiod):
 
         for step,v in enumerate(series):
             step *= 5
-            time = "2020 01 %02d %02d %02d" % (step // 1440 + 1, (step % 1440) // 60, step % 60)
+            time = "2021 01 %02d %02d %02d" % (step // 1440 + 1, (step % 1440) // 60, step % 60)
             fw.write(name + " " + time + " " + str(v) + "\n")
 
 
