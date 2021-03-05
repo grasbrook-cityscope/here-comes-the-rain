@@ -4,7 +4,7 @@ def readCSV(filepath, period):
     duration_volumes = {}
 
     with open(filepath) as fr:
-        header = fr.readline().split(",")
+        header = fr.readline()[:-1].split(",")  # strip off \n character and split by comma
         column = header.index(period)
         for line in fr:
             line = line.split(",")
